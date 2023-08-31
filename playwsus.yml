@@ -1,5 +1,5 @@
 - name: Actualizar servidores Test
-  hosts: arsrv750
+  hosts: 10.100.24.43
   tasks:
     - name: Descargar e instalar actualizaciones de Windows
       win_updates:
