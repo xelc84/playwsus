@@ -1,0 +1,10 @@
+- name: Actualizar servidores Test
+  hosts: win7
+  tasks:
+    - name: Descargar e instalar actualizaciones de Windows
+      win_updates:
+        category_names:
+          - SecurityUpdates
+          - CriticalUpdates
+        reboot: true
+        log_path: C:\ansible_wu.txt
