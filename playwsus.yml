@@ -1,9 +1,8 @@
-- name: Actualizar servidores Test
+- name: Actualizar Servidores
   hosts: 10.100.24.43, vdcloud, vdcloud2, srvcloud
   tasks:
     - name: Descargar e instalar actualizaciones de Windows
       win_updates:
-       managed_server
         category_names:
           - SecurityUpdates
           - CriticalUpdates
