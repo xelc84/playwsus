@@ -1,5 +1,5 @@
 - name: Actualizar Servidores
-  hosts: 10.100.24.43, vdcloud, vdcloud2, srvcloud
+  hosts: 10.100.24.43, vd-cloud, vd-cloud2, srv-cloud
   tasks:
     - name: Descargar e instalar actualizaciones de Windows
       win_updates:
