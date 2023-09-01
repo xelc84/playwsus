@@ -1,5 +1,5 @@
 - name: Actualizar Servidores
-  hosts: 10.100.28.17
+  hosts: all
   tasks:
     - name: Descargar e instalar actualizaciones de Windows
       win_updates:
