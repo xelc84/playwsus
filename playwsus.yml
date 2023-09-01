@@ -1,5 +1,5 @@
 - name: Actualizar Servidores
-  hosts: srv-cloud.mdar.aerolineas.com.ar
+  hosts: 10.100.28.17
   tasks:
     - name: Descargar e instalar actualizaciones de Windows
       win_updates:
