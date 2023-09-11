@@ -7,8 +7,8 @@
           - SecurityUpdates
           - CriticalUpdates
         reboot: true
-        state: search
-      register: pending_updates
-      until: pending_updates.updates_found == false
-      retries: 60
-      delay: 300
+      #  state: search
+      # register: pending_updates
+      # until: pending_updates.updates_found == false
+      # retries: 60
+      # delay: 300
