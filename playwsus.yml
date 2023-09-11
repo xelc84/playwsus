@@ -9,5 +9,5 @@
         reboot: true
     - name: Verificar si quedan actualizaciones pendientes después del reinicio
       win_updates:
-        state: search
+        state: searched
       register: pending_updates
