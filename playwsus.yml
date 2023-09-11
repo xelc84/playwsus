@@ -7,8 +7,7 @@
           - SecurityUpdates
           - CriticalUpdates
         reboot: true
-      #  state: search
-      # register: pending_updates
-      # until: pending_updates.updates_found == false
-      # retries: 60
-      # delay: 300
+    - name: Notificar si no hay actualizaciones pendientes
+      debug:
+        msg: "El sistema está actualizado, no hay actualizaciones pendientes."
+      when: pending_updates.updates_found == false
