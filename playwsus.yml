@@ -7,7 +7,7 @@
           - SecurityUpdates
           - CriticalUpdates
         reboot: true
-    - name: Notificar si no hay actualizaciones pendientes
-      debug:
-        msg: "El sistema está actualizado, no hay actualizaciones pendientes."
-      when: pending_updates.updates_found == false
+    - name: Verificar si quedan actualizaciones pendientes después del reinicio
+      win_updates:
+        state: search
+      register: pending_updates
