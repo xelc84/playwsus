@@ -7,7 +7,6 @@
           - SecurityUpdates
           - CriticalUpdates
         reboot: true
-      win_updates:
         state: search
       register: pending_updates
       until: pending_updates.updates_found == false
