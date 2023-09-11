@@ -11,3 +11,6 @@
       win_updates:
         state: searched
       register: pending_updates
+    - name: Mostrar listado de actualizaciones pendientes
+      debug:
+        var: pending_updates.updates
