@@ -1,16 +1,18 @@
 ---
-- name: Crear VMware Snapshot
-  community.vmware.vmware_guest_snapshot:
-    hostname: "{{ arsrv197.mdar.aerolineas.com.ar }}"
-    username: "{{ ar031692adm@mdar.aerolineas.com.ar }}"
-    password: "{{ 2023*Arsaprod }}"
-    datacenter: "{{ CIP Ezeiza }}"
-    folder: "/{{ / }}/vm/"
-    name: "{{ ar031692adm }}"
-    state: present
-    snapshot_name: snap1
-    description: snap1_description
-  delegate_to: localhost
+- name: Create a snapshot
+  hosts: all
+  tasks:
+    - name: Crear un snapshot
+      community.vmware.vmware_guest_snapshot:
+        hostname: arsrv197.mdar.aerolineas.com.ar
+        username: ar031692adm@mdar.aerolineas.com.ar
+        password: 2023*Arsaprod
+        datacenter: CIP Ezeiza
+        folder: "/"
+        name: "{{ tu_nombre_vm }}"
+        state: present
+        snapshot_name: Snapshot created by Ansible Tower
+        description: snap1_description
 
 - name: Actualizar Servidores
   hosts: all
