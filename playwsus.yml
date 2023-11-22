@@ -1,10 +1,10 @@
 - name: Crear VMware Snapshot
-  hosts: vd-cloud
+  hosts: 10.100.28.11
   gather_facts: false
   tasks:
     - name: Crear snapshot
       vmware_guest_snapshot:
         validate_certs: no
-        name: vd-cloud
+        name: 10.100.28.11
         state: present
         description: "Snapshot created by Ansible Tower"
