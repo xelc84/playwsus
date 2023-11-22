@@ -1,6 +1,7 @@
 - name: Crear snapshot y actualizar Windows Servers
   hosts: all
   gather_facts: no
+  
   tasks:
     - name: Crear snapshot con VMware
       community.vmware.vmware_vm_vm_drs_rule:
