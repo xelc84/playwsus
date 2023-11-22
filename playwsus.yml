@@ -2,7 +2,6 @@
   hosts: all
   tasks:
     - name: Crear snapshot con VMware
-       hostname: arsrv197.mdar.aerolineas.com.ar
        validate_certs: no
        vm_username: ar031692adm@mdar.aerolineas.com.ar
        vm_password: 2023*Arsaprod
