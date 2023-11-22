@@ -7,7 +7,7 @@
         validate_certs: no
         vm_username: ar031692adm@mdar.aerolineas.com.ar
         vm_password: 2023*Arsaprod
-        name: "Snapshot previo a actualización"
+        snapshot_name: "Snapshot previo a actualización"
         state: present
 
 - name: Actualizar Servidores
