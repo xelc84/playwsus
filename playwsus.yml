@@ -1,5 +1,5 @@
 ---
-- name: Create a snapshot
+- name: Crear VMware Snapshot
   community.vmware.vmware_guest_snapshot:
     hostname: "{{ arsrv197.mdar.aerolineas.com.ar }}"
     username: "{{ ar031692adm@mdar.aerolineas.com.ar }}"
