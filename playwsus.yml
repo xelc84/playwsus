@@ -9,6 +9,8 @@
         password: 2023*Arsaprod
         datacenter: CIP Ezeiza
         folder: "/"
+        datastore: vsanDatastore
+        cluster: Cluster vSAN
         state: present
         snapshot_name: Snapshot created by Ansible Tower
         description: snap1_description
