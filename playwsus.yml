@@ -1,7 +1,6 @@
 - name: Crear VMware Snapshot
   hosts: VD, Servers
   gather_facts: false
-
   tasks:
     - name: Crear snapshot
       vmware_guest_snapshot:
