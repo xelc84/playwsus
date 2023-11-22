@@ -1,7 +1,7 @@
 - name: Crear snapshot y actualizar Windows Servers
   hosts: all
   tasks:
-     community.vmware.vmware_vm_vm_drs_rule:
+    - name: Crear snapshot con VMware
        hostname: arsrv197.mdar.aerolineas.com.ar
        validate_certs: no
        vm_username: ar031692adm@mdar.aerolineas.com.ar
