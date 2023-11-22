@@ -9,7 +9,6 @@
         password: 2023*Arsaprod
         datacenter: CIP Ezeiza
         folder: "/"
-        name: "{{ tu_nombre_vm }}"
         state: present
         snapshot_name: Snapshot created by Ansible Tower
         description: snap1_description
