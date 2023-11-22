@@ -1,4 +1,3 @@
----
 - name: Crear snapshot y actualizar Windows Servers
   hosts: all
   tasks:
