@@ -1,5 +1,5 @@
 - name: Crear snapshot y actualizar Windows Servers
-  hosts: vd
+  hosts: 10.100.28.11
   gather_facts: no
   tasks:
     - name: Crear snapshot con VMware
