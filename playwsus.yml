@@ -1,11 +1,11 @@
 - name: Crear VMware Snapshot
-  hosts: all
+  hosts: vd-cloud
   gather_facts: false
   tasks:
     - name: Crear snapshot
       vmware_guest_snapshot:
         validate_certs: no
-        name: "{{ inventory_hostname }}"
+        name: vd-cloud
         state: present
         description: "Snapshot created by Ansible Tower"
         
