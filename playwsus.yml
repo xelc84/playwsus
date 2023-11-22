@@ -9,7 +9,7 @@
         username: ar031692adm@mdar.aerolineas.com.ar
         password: 2023*Arsaprod
         validate_certs: no
-        vm_username: ar031692adm
+        vm_username: ar031692adm@mdar.aerolineas.com.ar
         vm_password: 2023*Arrsaprod
         name: "Snapshot previo a actualización"
         state: present
