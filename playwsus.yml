@@ -3,11 +3,7 @@
   hosts: all
   tasks:
     - name: Crear snapshot con VMware
-      community.vmware.vmware_vm_vm_drs_rule:
-        hostname: arsrv197.mdar.aerolineas.com.ar
-        username: ar031692adm@mdar.aerolineas.com.ar
-        password: 2023*Arsaprod
-        cluster_name: Cluster vSAN
+      vmware_guest_snapshot:
         validate_certs: no
         vm_username: ar031692adm@mdar.aerolineas.com.ar
         vm_password: 2023*Arsaprod
