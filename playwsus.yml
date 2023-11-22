@@ -1,14 +1,16 @@
 ---
-- name: Crear snapshot y actualizar Windows Servers
-  hosts: all
-  tasks:
-    - name: Crear snapshot con VMware
-      community.vmware.vmware_guest_snapshot:
-        validate_certs: no
-        vm_username: ar031692adm@mdar.aerolineas.com.ar
-        vm_password: 2023*Arsaprod
-        snapshot_name: "Snapshot previo a actualización"
-        state: present
+- name: Create a snapshot
+  community.vmware.vmware_guest_snapshot:
+    hostname: "{{ arsrv197.mdar.aerolineas.com.ar }}"
+    username: "{{ ar031692adm@mdar.aerolineas.com.ar }}"
+    password: "{{ 2023*Arsaprod }}"
+    datacenter: "{{ CIP Ezeiza }}"
+    folder: "/{{ / }}/vm/"
+    name: "{{ ar031692adm }}"
+    state: present
+    snapshot_name: snap1
+    description: snap1_description
+  delegate_to: localhost
 
 - name: Actualizar Servidores
   hosts: all
