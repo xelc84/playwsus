@@ -1,5 +1,7 @@
 - name: Crear snapshot y actualizar Windows Servers
   hosts: all
+  vars:
+    ansible_python_interpreter: /usr/bin/python3
   gather_facts: no
   
   tasks:
