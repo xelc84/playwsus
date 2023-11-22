@@ -1,5 +1,5 @@
 - name: Crear snapshot y actualizar Windows Servers
-  hosts: 10.100.28.11
+  hosts: all
   gather_facts: no
   tasks:
     - name: Crear snapshot con VMware
@@ -12,3 +12,20 @@
         vm_password: 2023*Arrsaprod
         name: "Snapshot previo a actualización"
         state: present
+        
+- name: Actualizar Servidores
+  hosts: all
+  tasks:
+    - name: Descargar e instalar actualizaciones de Windows
+      win_updates:
+        category_names:
+          - SecurityUpdates
+          - CriticalUpdates
+        reboot: true
+    - name: Verificar si quedan actualizaciones pendientes después del reinicio
+      win_updates:
+        state: searched
+      register: pending_updates
+    - name: Mostrar listado de actualizaciones pendientes
+      debug:
+        var: pending_updates.updates
