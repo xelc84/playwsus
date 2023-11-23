@@ -14,6 +14,16 @@
         state: present
         snapshot_name: Snapshot created by Ansible Tower
         description: snap1_description
+        tags:
+        - snapshot
+      register: snapshot_result
+ 
+    - name: Verificar si la creación de snapshot fue exitosa
+      fail:
+        msg: "Error al crear el snapshot. Detalles: {{ snapshot_result }}"
+      when: snapshot_result.failed
+      tags:
+        - snapshot
 
 - name: Actualizar Servidores
   hosts: all
@@ -24,6 +34,8 @@
           - SecurityUpdates
           - CriticalUpdates
         reboot: true
+      tags:
+        - updates
     - name: Verificar si quedan actualizaciones pendientes después del reinicio
       win_updates:
         state: searched
@@ -31,3 +43,5 @@
     - name: Mostrar listado de actualizaciones pendientes
       debug:
         var: pending_updates.updates
+      tags:
+        - updates
